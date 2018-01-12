@@ -34,5 +34,27 @@ namespace ProjetoCidades.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult Editar(int id){
+            var cidade = objCidadeRep.Listar(id);
+            return View(cidade);
+        }
+
+        [HttpPost]
+        public IActionResult Editar([Bind] Cidade cidade){
+            objCidadeRep.Editar(cidade);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Excluir(int id){
+            objCidadeRep.Excluir(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Detalhes(int id){
+            var cidade = objCidadeRep.Listar(id);
+            return View(cidade);
+        }
+
     }
 }
