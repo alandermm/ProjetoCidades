@@ -29,7 +29,7 @@
                         <td>@item.Habitantes</td>
                         <td><a asp-action="Editar" asp-route-id="@item.Id">Editar</a></td>
                         <td><a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a></td>
-                        <td><a asp-action="Excluir" asp-route-id="@item.Id" onclick="return confirm('Deseja realmente excluir a cidade?')">Excluir</a></td>
+                        <td><a asp-action="Excluir" asp-route-id="@item.Id" onclick="return confirm('Deseja realmente excluir a cidade @item.Nome?')">Excluir</a></td>
                         
                     </tr>
                 }
